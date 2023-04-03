@@ -5,7 +5,7 @@ Live page: [Work Day Scheduler](https://hiroro1989.github.io/Work-Day-Scheduler/
 This is the simple calender application to save events for each hour of the day by HTML, CSS and jQuery.
 
 ## Mock-up
-![Mock-up](./Assets/mockup.tiff)
+![Mock-up](./Assets/mockup.png)
 
 ## Usage
 This calender allows busy pepole to manage their time on the browser.
