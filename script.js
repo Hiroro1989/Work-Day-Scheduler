@@ -29,7 +29,7 @@ $(function () {
     datas.push(data);
     
     localStorage.setItem("datas", JSON.stringify(datas));
-    console.log(datas);
+    // console.log(datas);
 
   });
 
@@ -44,14 +44,14 @@ $('.time-block').each(function(){
   timeblockId = $(this).attr('id');
   var hour = timeblockId.replace(/[^0-9]/g, '');
   if(hour<currentTime){
-    $(this).removeClass('present past');
-    $(this).addClass('future');
+    // $(this).removeClass('present future');
+    $(this).addClass('past');
   }else if(hour == currentTime){
-    $(this).removeClass('future past');
+    // $(this).removeClass('future past');
     $(this).addClass('present');
   }else{
-    $(this).removeClass('present future');
-    $(this).addClass('past');
+    // $(this).removeClass('present past');
+    $(this).addClass('future');
   }
   console.log(hour);
 })
@@ -62,7 +62,7 @@ $('.time-block').each(function(){
     // attribute of each time-block be used to do this?
     //
     var savedData = JSON.parse(localStorage.getItem('datas'));
-    console.log(savedData);
+    // console.log(savedData);
 
     if(savedData !== null){
       datas = savedData;
