@@ -44,13 +44,13 @@ $('.time-block').each(function(){
   timeblockId = $(this).attr('id');
   var hour = timeblockId.replace(/[^0-9]/g, '');
   if(hour<currentTime){
-    // $(this).removeClass('present future');
+    $(this).removeClass('present future');
     $(this).addClass('past');
   }else if(hour == currentTime){
-    // $(this).removeClass('future past');
+    $(this).removeClass('future past');
     $(this).addClass('present');
   }else{
-    // $(this).removeClass('present past');
+    $(this).removeClass('present past');
     $(this).addClass('future');
   }
   console.log(hour);
