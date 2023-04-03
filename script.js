@@ -41,15 +41,19 @@ $(function () {
     //
 var currentTime =dayjs().format("H");
 $('.time-block').each(function(){
-  // var timeblockId = $(this).attr('id');
-  var hour = parseInt(timeblockId);
+  timeblockId = $(this).attr('id');
+  var hour = timeblockId.replace(/[^0-9]/g, '');
   if(hour<currentTime){
-    $(this).addClass('past');
+    $(this).removeClass('present past');
+    $(this).addClass('future');
   }else if(hour == currentTime){
+    $(this).removeClass('future past');
     $(this).addClass('present');
   }else{
-    $(this).addClass('future');
+    $(this).removeClass('present future');
+    $(this).addClass('past');
   }
+  console.log(hour);
 })
 
 
@@ -70,7 +74,7 @@ $('.time-block').each(function(){
    
 
 
-    console.log(savedData);
+    // console.log(savedData);
     // TODO: Add code to display the current date in the header of the page.
     var today = dayjs().format("dddd, MMMM D"); //Do?
     $("#currentDay").text(today);
